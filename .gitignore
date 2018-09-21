@@ -1,0 +1,7 @@
+bower_components
+node_modules
+assets/images/*.jpg
+assets/images/*.png
+dist/images/*.jpg
+dist/images/*.png
+vendor

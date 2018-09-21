@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+// Import variable overrides
+@import "variables";
+
+// Import dependencies from node_modules
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Import theme styles
+@import "base";
