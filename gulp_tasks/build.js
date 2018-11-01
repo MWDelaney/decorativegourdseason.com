@@ -6,18 +6,17 @@ const gulp        = require('gulp');
 
 let jekyll        = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
-let build = [];
+let buildDeps = [];
 Object.keys(config.tasks).forEach(function (key) {
   if (config.tasks[key] && key != 'browsersync' && key != 'watch') {
-    build.push(key);
+    buildDeps.push(key);
   }
 });
-build.push('jekyll-build');
 
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', function (done) {
+gulp.task('build', buildDeps, function (done) {
   let jekyllConfig = config.jekyll.config.default;
   if (argv.jekyllEnv == 'production') {
     process.env.JEKYLL_ENV = 'production';
@@ -30,12 +29,6 @@ gulp.task('jekyll-build', function (done) {
 });
 
 /**
- * Build task, this will minify the images, compile the sass,
- * bundle the js, but not launch BrowserSync and watch files.
- */
-gulp.task('build', build);
-
-/**
  * Test task, this use the build task.
  */
-gulp.task('test', build);
+gulp.task('test', buildDeps);
