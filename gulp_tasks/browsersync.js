@@ -9,7 +9,7 @@ let browser = (config.browsersync.browsers[0] != null) ? config.browsersync.brow
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browsersync', ['jekyll-build'], function () {
+gulp.task('browsersync', ['build'], function () {
   return browsersync.init({
     port: config.port,
     browser: browser,
@@ -22,7 +22,7 @@ gulp.task('browsersync', ['jekyll-build'], function () {
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('browser-reload', ['jekyll-build'], function () {
+gulp.task('browser-reload', ['build'], function () {
   browsersync.notify('Rebuilded Jekyll');
   browsersync.reload();
 });
