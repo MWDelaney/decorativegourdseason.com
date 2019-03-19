@@ -1,5 +1,6 @@
 # Based on Frasco (see below)
 ---
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c137e8d7-511c-4dab-bd92-f860776b3abb/deploy-status)](https://app.netlify.com/sites/decorativegourdseason/deploys)
 
 ## Development
 Install development dependencies:
