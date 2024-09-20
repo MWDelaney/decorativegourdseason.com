@@ -12,7 +12,6 @@ class DecorativeGourdSeason extends HTMLElement {
     };
     this.yesDefault = `🎃 It is decorative gourd season! 🎃`;
     this.noDefault = `It is not decorative gourd season.`;
-
   }
 
   connectedCallback() {
