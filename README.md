@@ -2,6 +2,8 @@
 
 A web component that tells you if it's decorative gourd season.
 
+Demo: [decorativegourdseason.com](https://decorativegourdseason.com)
+
 ## Usage
 
 ```html
