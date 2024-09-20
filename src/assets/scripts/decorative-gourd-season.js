@@ -6,50 +6,44 @@ class DecorativeGourdSeason extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this.yesTemplate = this.getTemplate('yes');
-    this.noTemplate = this.getTemplate('no');
+    this.templates = {
+      yes: this.getTemplate('yes'),
+      no: this.getTemplate('no')
+    };
     this.yesDefault = `🎃 It is decorative gourd season! 🎃`;
     this.noDefault = `It is not decorative gourd season.`;
 
   }
 
   connectedCallback() {
-    // Add a title attribute to the web component
     this.setAttribute('title', 'Read the original article by Colin Nissan: https://www.mcsweeneys.net/articles/its-decorative-gourd-season-motherfuckers');
-
-    // Clear the content
     this.innerHTML = "";
 
     if (this.isDecorativeGourdSeason()) {
-      if (this.yesTemplate) {
-      this.shadowRoot.appendChild(this.yesTemplate);
-      } else {
-      this.shadowRoot.innerHTML = `${this.yesDefault}`;
-      }
+      this.shadowRoot.appendChild(this.templates.yes || this.createDefaultNode(this.yesDefault));
     } else {
-      if (this.noTemplate) {
-      this.shadowRoot.appendChild(this.noTemplate);
-      } else {
-      this.shadowRoot.innerHTML = `${this.noDefault}`;
-      }
+      this.shadowRoot.appendChild(this.templates.no || this.createDefaultNode(this.noDefault));
     }
+  }
+
+  /**
+   * createDefaultNode
+   */
+  createDefaultNode(text) {
+    const node = document.createElement('span');
+    node.textContent = text;
+    return node;
   }
 
   /**
    * getTemplate
    */
   getTemplate(id) {
-    // Get the template by its slot attribute
-    let template = document.querySelector(`template[slot=${id}]`)
-    let clone = null;
-    if(template) {
-      clone = document.importNode(template.content, true);
-    }
-    return clone;
+    let template = document.querySelector(`template[slot=${id}]`);
+    return template ? document.importNode(template.content, true) : null;
   }
 
   /**
-   *
    * isDecorativeGourdSeason
    */
   isDecorativeGourdSeason() {
