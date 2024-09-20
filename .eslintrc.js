@@ -1,18 +1,42 @@
 module.exports = {
-  'extends': ['eslint:recommended', 'google'],
-  'env': {
-    // For more environments, see here: http://eslint.org/docs/user-guide/configuring.html#specifying-environments
-    'browser': true,
-    'es6': true,
-    'node': true
+  root: true,
+  extends: 'eslint:recommended',
+  parser: 'babel-eslint',
+  globals: {
+    wp: true
   },
-  'rules': {
-    // Insert custom rules here
-    // For more rules, see here: http://eslint.org/docs/rules/
-    'no-var': 'warn',
-    'require-jsdoc': 'off'
+  env: {
+    node: true,
+    es6: true,
+    amd: true,
+    browser: true,
+    jquery: true
   },
-  'parserOptions': {
-    'sourceType': 'module'
+  parserOptions: {
+    ecmaFeatures: {
+      globalReturn: true,
+      generators: false,
+      objectLiteralDuplicateProperties: false
+    },
+    ecmaVersion: 2017,
+    sourceType: 'module'
+  },
+  plugins: ['import'],
+  settings: {
+    'import/core-modules': [],
+    'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$']
+  },
+  rules: {
+    'no-console': 0,
+    'comma-dangle': [
+      'error',
+      {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'always-multiline',
+        functions: 'ignore'
+      }
+    ]
   }
-}
+};

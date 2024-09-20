@@ -1,8 +1,16 @@
-_site
-bower_components
+# dependencies installed by npm
 node_modules
-assets/images/*.jpg
-assets/images/*.png
-dist/images/*.jpg
-dist/images/*.png
-vendor
+
+# build artifacts
+public
+.cache/
+
+# secrets and errors
+.env
+.log
+
+# macOS related files
+.DS_Store
+
+# Local Netlify folder
+.netlify

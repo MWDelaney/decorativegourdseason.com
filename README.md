@@ -1,39 +1,22 @@
-# Based on Frasco (see below)
----
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c137e8d7-511c-4dab-bd92-f860776b3abb/deploy-status)](https://app.netlify.com/sites/decorativegourdseason/deploys)
+# 🎃 Is it decorative gourd season?
 
-## Development
-Install development dependencies:
-```bash
-$ yarn
+A web component that tells you if it's decorative gourd season.
+
+## Usage
+
+```html
+<decorative-gourd-season>Is it decorative gourd season?</decorative-gourd-season>
+<script type="module" src="https://decorativegourdseason.com/assets/scripts/decorative-gourd-season.js"></script>
 ```
 
-Build for development:
-```bash
-$ yarn start
+### Customize the message
+Optionally you can use `<template>`s to define the content of the component.
+
+```html
+<decorative-gourd-season>
+  <template slot="yes">Yes, it's decorative gourd season! 🎃🦇👻</template>
+  <template slot="no">No, it's not decorative gourd season. ☹️</template>
+</decorative-gourd-season>
 ```
 
-Build for production:
-```bash
-$ yarn build
-```
-
-## Deployment
-Commit all changes to the `master` branch, then run:
-```bash
-$ git subtree push --prefix _site origin gh-pages
-```
-
----
-
-# Frasco [![GitHub release](https://img.shields.io/github/release/ixkaito/frasco.svg)](https://github.com/ixkaito/frasco/releases) [![Build Status](https://travis-ci.org/ixkaito/frasco.svg?branch=master)](https://travis-ci.org/ixkaito/frasco) [![license](https://img.shields.io/github/license/ixkaito/frasco.svg?maxAge=2592000)](https://github.com/ixkaito/frasco/blob/master/LICENSE)
-
-__Jekyll starter kit including full setup for gulp, Sass, Autoprefixer, PostCSS, Webpack, imagemin, Browsersync etc.__
-
-## Documentation
-
-https://ixkaito.github.io/frasco/
-
-## Copyright / License
-
-Copyright © 2015 the contributors of the Frasco project under the [MIT License](https://github.com/ixkaito/frasco/blob/master/LICENSE).
+<a href="https://www.mcsweeneys.net/articles/its-decorative-gourd-season-motherfuckers">Read the original article</a> by Colin Nissan
