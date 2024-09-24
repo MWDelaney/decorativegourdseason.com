@@ -4,6 +4,8 @@ A web component that tells you if it's decorative gourd season.
 
 Demo: [decorativegourdseason.com](https://decorativegourdseason.com)
 
+Source: [decorative-gourd-season.js](https://github.com/MWDelaney/decorativegourdseason.com/blob/master/src/assets/scripts/decorative-gourd-season.js)
+
 ## Usage
 
 ```html
